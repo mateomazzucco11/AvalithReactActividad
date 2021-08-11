@@ -1,5 +1,5 @@
-import { Productos } from '../data/Productos'
+import { ProductosList } from '../data/ProductosList'
 
 export const getProductStock = (changeStock) => {
-    return Productos.find(stock => stock.stock === changeStock)
+    return ProductosList.filter(stock => stock.stock === changeStock)
 }

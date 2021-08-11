@@ -64,7 +64,7 @@
     text-decoration: underline;
 }
 
-.all-product div:nth-child(1)::after {
+.all-product div div::after {
     height: 4px;
     width: 100%;
     display: block;

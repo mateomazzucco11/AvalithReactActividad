@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getProductStock } from '../selectors/getProductStock';
 import './CatalogoScreen.css';
+import { Product } from './Product';
 
 export const CatalogoScreen = () => {
     const [stock, setStock] = useState(true)
@@ -15,24 +16,33 @@ export const CatalogoScreen = () => {
                     (stock)
                         ?
                         <div className='stock-product'>
-                            <p><span>Nombre:</span> {producto.name}</p>
-                            <p><span>Descripción:</span> {producto.description}</p>
-                            <p><span>Precio:</span> ${producto.price}</p>
-                            <p><span>Stock:</span> {producto.stock ? 'Si' : 'No'}</p>
+                            {producto.map(p => {
+                                return (
+                                    <Product
+                                        producto={p}
+                                    />
+                                )
+                            })}
                         </div>
                         :
                         <div className='all-product'>
                             <div >
-                                <p><span>Nombre:</span> {producto.name}</p>
-                                <p><span>Descripción:</span> {producto.description}</p>
-                                <p><span>Precio:</span> ${producto.price}</p>
-                                <p><span>Stock:</span> {producto.stock ? 'Si' : 'No'}</p>
+                                {producto.map(p =>
+                                (
+                                    <Product
+                                        producto={p}
+                                    />
+                                )
+                                )}
                             </div>
                             <div>
-                                <p><span>Nombre:</span> {productoFalse.name}</p>
-                                <p><span>Descripción:</span> {productoFalse.description}</p>
-                                <p><span>Precio:</span> ${productoFalse.price}</p>
-                                <p><span>Stock:</span> {productoFalse.stock ? 'Si' : 'No'}</p>
+                                {productoFalse.map(p =>
+                                (
+                                    <Product
+                                        producto={p}
+                                    />
+                                )
+                                )}
                             </div>
                         </div>
                 }
