@@ -18,7 +18,7 @@ export const CatalogoScreen = () => {
                             <p><span>Nombre:</span> {producto.name}</p>
                             <p><span>Descripción:</span> {producto.description}</p>
                             <p><span>Precio:</span> ${producto.price}</p>
-                            <p><span>Stock:</span> {producto.stock.toString()}</p>
+                            <p><span>Stock:</span> {producto.stock ? 'Si' : 'No'}</p>
                         </div>
                         :
                         <div className='all-product'>
@@ -26,13 +26,13 @@ export const CatalogoScreen = () => {
                                 <p><span>Nombre:</span> {producto.name}</p>
                                 <p><span>Descripción:</span> {producto.description}</p>
                                 <p><span>Precio:</span> ${producto.price}</p>
-                                <p><span>Stock:</span> {producto.stock.toString()}</p>
+                                <p><span>Stock:</span> {producto.stock ? 'Si' : 'No'}</p>
                             </div>
                             <div>
                                 <p><span>Nombre:</span> {productoFalse.name}</p>
                                 <p><span>Descripción:</span> {productoFalse.description}</p>
                                 <p><span>Precio:</span> ${productoFalse.price}</p>
-                                <p><span>Stock:</span> {productoFalse.stock.toString()}</p>
+                                <p><span>Stock:</span> {productoFalse.stock ? 'Si' : 'No'}</p>
                             </div>
                         </div>
                 }
